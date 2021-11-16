@@ -1,5 +1,6 @@
 # Final_Project
-Web-server with parser, connection to DBMS and machine learning
+Web-server with parser, connection to DBMS and machine learning.
+
 Team: Aisha Bazylzhanova(SE-2004), Arysbay Dastan(SE-2004) 
 
 ## Installation 
