@@ -1,0 +1,17 @@
+<table class="table">
+    <thead>
+      <tr>
+        
+        <th scope="col">Name</th>
+        <th scope="col">All News</th>
+      </tr>
+    </thead>
+      {% for coin in coins %}
+      <tr>
+  
+      <td>{{coin.name_of_coin}}
+      </td>
+      <td>{{coin.news}}
+      </td>
+      {% endfor %}
+  </table>
