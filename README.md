@@ -19,7 +19,7 @@ In webServer.py file you need to provide your data
 
 When you can run webServer.py
    ```python
-   C:\<your>\<path>\<to>\<the>\<folder>\webServer.py
+   C:\<your>\<path>\<to>\<the>\<folder>\webserver.py
    ```
    
 In /webpage route you provide name of needed coin. When you enter the name of the coin and click the button, you will be automatically redirected to /coin route.
