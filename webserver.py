@@ -1,9 +1,9 @@
 from datetime import datetime, timedelta
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from flask.helpers import make_response
 from flask import request
 from flask.json import jsonify
-from database import Tablecoin, db,app
+from database import Tablecoin, db,app, UserTable
 from selenium import webdriver
 from bs4 import BeautifulSoup
 from transformers import pipeline
@@ -17,6 +17,22 @@ db.engine.execute('CREATE TABLE tablecoin (ID int, name_of_coin VARCHAR (255), n
 db.session.commit()
 
 app.config['SECRET_KEY'] = 'thisismyflasksecretkey'
+
+@app.route('/signup')
+def signup():
+    return render_template('login.html')
+
+@app.route('/auth', methods = ['POST', 'GET'])
+def auth():
+    if request.method == 'GET':
+        return "GETTING DATA"
+    if request.method == 'POST':
+        login1 = request.form['login']
+        password2 = request.form['password']
+        auth = request.authorization
+        user = UserTable.query.filter_by(login=login1, password=password2).first_or_404(description='Could not found a user with login and password:  {}'.format(login1))
+        return redirect('/webpage')
+    return make_response('Could not verify!', 401, {'WWW-Authenticate': 'Basic realm="Login required'})
 
 @app.route('/webpage')
 def webpage():
