@@ -23,7 +23,7 @@ When you can run webServer.py
    C:\<your>\<path>\<to>\<the>\<folder>\webserver.py
    ```
    
-In /webpage route you provide name of needed coin. When you enter the name of the coin and click the button, you will be automatically redirected to /coin route.
+In /signup route you provide login and password. If they are correct when you will be redirected to the /webpage route. In /webpage route you provide name of needed coin. When you enter the name of the coin and click the button, you will be automatically redirected to /coin route.
  After that you will see summary of all recorded news about entered coin. 
   
    
